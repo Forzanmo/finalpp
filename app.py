@@ -1,7 +1,11 @@
-from fastapi import FastAPI
+from flask import Flask
+from flask_cors import CORS
 
-app = FastAPI()
+app = Flask(__name__)
+CORS(app) # This handles the CORS issue we discussed earlier
 
-@app.get("/")
-def home():
-    return {"message": "API is working 🚀"}
+@app.route('/')
+def hello():
+    return {"message": "Backend is running!"}
+
+# Do NOT use app.run() for Vercel; it handles the serving
