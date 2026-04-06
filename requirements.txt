@@ -1,4 +1,6 @@
 flask
 flask-cors
-pymongo
+# Add others below if you used them (examples):
+requests
 pandas
+numpy
